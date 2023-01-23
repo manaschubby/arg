@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import SVG from './svg';
 const Index = () => {
-    const passwords = ["Laude", "Chomu", "Gaandu", "chutiye"];
+    const [passwords,setPasswords] = useState(["Laude", "Chomu", "Gaandu", "chutiye"]);
     const passwordRef = useRef();
     const [level, setLevel] = useState(0);
     useEffect(() => {

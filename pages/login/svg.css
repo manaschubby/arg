@@ -1,30 +1,39 @@
-svg {
+.svg {
     position: absolute;
     
     height: 120vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  .path {
+}
+.path {
+  stroke: blue;
     animation: draw 20s infinite;
     animation-timing-function: linear;
-  }
-  .path-01 {
-    animation-delay: 0s;
-  }
-  .path-02 {
+}
+.path-01 {
+    stroke: blue;
+    animation-delay: 0s;  
+}
+.path-02 {
+  stroke: blue;
     animation-delay: 1s;
-  }
-  .path-03 {
+}  
+.path-03 {
+  stroke: blue;
     animation-delay: 2s;
-  }
-  .path-04 {
+}  
+.path-04 {
+  stroke: blue;
     animation-delay: 3s;
-  }
-  .path-05 {
+}
+.path-05 {
+  stroke: blue;
     animation-delay: 4s;
-  }
+}
+.paths-bg{
+  stroke: blue;
+}
   
   
   

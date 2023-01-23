@@ -474,7 +474,7 @@ const SVG = () => {
   
   
   
-    <g id="static" transform="translate(48.000000, 56.000000)" stroke="#DDE0E2" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+    <g id="static" transform="translate(48.000000, 56.000000)" stroke="#0096FF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
       <rect x="132" y="0" width="48" height="48" rx="4"></rect>
       <circle cx="172" cy="200" r="4"></circle>
       <circle cx="200" cy="212" r="4"></circle>
@@ -781,7 +781,7 @@ const SVG = () => {
       <circle cx="1811" cy="1280" r="4"></circle>
     </g>
   
-    <g id="paths-bg" transform="translate(0.000000, 0.000000)" stroke="#DDE0E2" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+    <g id="paths-bg" transform="translate(0.000000, 0.000000)" stroke="#0096FF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
       <g id="C23" transform="translate(176.000000, 0.000000)">
         <polyline id="path" points="52 92 84 92 116 60 116 0"></polyline>
         <polyline id="path" points="52 84 80 84 108 56 108 0"></polyline>

@@ -25,15 +25,19 @@ const Index = () => {
     const submit = (e)=>{
         if(passwordRef.current.value==data[level][1]){
             alert(data[level][2]);
-            setLevel(level+1);
+            
+            if (data[level+1]){
+                setLevel(level+1)
+            }else{
+                    alert("Thank u for playing");
+                    setLevel(1);
+                    return;
+            }
             setIsLoading(true);
             timeout=setTimeout(()=>{
                 setIsLoading(false);
             },2000)
-            if(data[level][1]==null){
-                alert("Thank u for playing");
-                setLevel(1);
-            }
+            
             passwordRef.current.value="";
         }
         else{

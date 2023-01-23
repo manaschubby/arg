@@ -1,43 +1,55 @@
 import React, { useRef, useState, useEffect } from 'react';
 import SVG from './svg';
+import Papa from 'papaparse'
 const Index = () => {
     const [passwords,setPasswords] = useState(["Laude", "Chomu", "Gaandu", "chutiye"]);
+    const [data,setData]=useState([])
     const passwordRef = useRef();
-    const [level, setLevel] = useState(0);
+    const [level, setLevel] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+    let timeout;
+    const fetch =()=>{
+        Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vQk1zlmIKcmbHEUfScquMDoTqpzYcan__KpkXx64cJuCUovsbp4Cftl2qAn79GybuaBHrrXLkERoDDU/pub?gid=0&single=true&output=csv",{
+        download: true,
+        hearder:true,
+        complete:(results)=>{
+            setData(results.data);
+            setIsLoading(false);
+        }
+    })
+        setData(Array.from(data))
+    }
     useEffect(() => {
-        const listener = event => {
-          if (event.code === "Enter" || event.code === "NumpadEnter") {
-            event.preventDefault();
-            submit(event)
-          }
-        };
-        document.addEventListener("keydown", listener);
-        return () => {
-          document.removeEventListener("keydown", listener);
-        };
-      }, [level]);
+        fetch();
+    },[]);
     const submit = (e)=>{
-        e.preventDefault();
-        if(passwordRef.current.value==passwords[level]){
-            if(level==3){
-                alert("Congratulations: You are a certified Abuser");
-                window.location.reload(false);
-
-                return;
-            }
+        if(passwordRef.current.value==data[level][1]){
+            alert(data[level][2]);
             setLevel(level+1);
+            setIsLoading(true);
+            timeout=setTimeout(()=>{
+                setIsLoading(false);
+            },2000)
+            if(data[level][1]==null){
+                alert("Thank u for playing");
+                setLevel(1);
+            }
             passwordRef.current.value="";
+        }
+        else{
+            alert("Incorrect Answer try Again");
         }
     }
     return (
         <div className='background'>
             <SVG />
-            <div className='center-main'>
-                <div className='level'>Level: {level}</div>
+            {!isLoading ? <div className='center-main'>
+                <h1 className='level'>Level: {level}</h1>
                 <div className='label'>Enter Password</div>
                 <input className='password' type="password" placeholder='Password' ref={passwordRef}></input>
                 <button className='submit' onClick={submit}>Advance</button>
             </div>
+            : <div className='center-main'><h1 style={{color:"white"}}>Checking Database for answers</h1></div>}
         </div>
     );
 }

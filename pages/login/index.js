@@ -1,15 +1,28 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import SVG from './svg';
 const Index = () => {
     const passwords = ["Laude", "Chomu", "Gaandu", "chutiye"];
     const passwordRef = useRef();
     const [level, setLevel] = useState(0);
+    useEffect(() => {
+        const listener = event => {
+          if (event.code === "Enter" || event.code === "NumpadEnter") {
+            event.preventDefault();
+            submit(event)
+          }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+          document.removeEventListener("keydown", listener);
+        };
+      }, [level]);
     const submit = (e)=>{
         e.preventDefault();
         if(passwordRef.current.value==passwords[level]){
             if(level==3){
                 alert("Congratulations: You are a certified Abuser");
-                setLevel(0);
+                window.location.reload(false);
+
                 return;
             }
             setLevel(level+1);

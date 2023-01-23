@@ -1,0 +1,65 @@
+@import url('https://fonts.cdnfonts.com/css/do-futuristic');
+.background{
+    position: fixed;
+    background: linear-gradient(to top, rgb(170,80,190) 0%, #fa71cd 50%,rgb(170,80,190) 100%);
+    width: 100vw;
+    height: 100vh;
+    background-position: fixed;
+}
+
+.center-main{
+    position: absolute;
+    margin: auto;
+    backdrop-filter: blur(5px);
+    background: linear-gradient(to top, rgba(170,80,190,0.2) 100%, rgba(250, 113, 205, 0.3) 100%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 90px rgb(170,80,190);
+}
+.label{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgba(265, 265, 265);
+    font-size: xx-large;
+    font-family: 'DO Futuristic', sans-serif;
+}
+.level{
+    color: rgba(265, 265, 265, 0.5);
+    padding: 20px;
+}
+.password{
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgba(265, 265, 265);
+    background: none;
+    border-width: 0.5px;
+    box-shadow: 0px 0px 90px rgb(170,80,190);
+    border-radius: 10px;
+    font-size:medium;
+    font-family: 'DO Futuristic', sans-serif;
+}
+.submit{
+    padding: 20px 30px 20px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgba(265, 265, 265);
+    background: none;
+    border: none;
+    box-shadow: 0px 0px 90px rgb(170,80,190);
+    border-radius: 10px;
+    font-size:large;
+    font-family: 'DO Futuristic', sans-serif;
+}
+@media (max-width: 700px) {
+    .center-main{
+        width: 350px;
+    }
+}

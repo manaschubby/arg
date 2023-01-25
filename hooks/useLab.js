@@ -7,6 +7,7 @@ const useLab = (curr) => {
     var secretPassKey;
     var keys = ["Why do you want to acces this you son of a bitch. Play the fucking game"];
     const [answer, setAnswer] = useState();
+    const [initialized, setInitialized] = useState(false);
     useEffect(()=>{
         Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTsUfoS6dO39KVqXEa-VONFd8YeMlUnWjo5e3F9GoBhG_F8_ClhecMjF1rD2_tukJ61DRd5wjCENMfY/pub?gid=0&single=true&output=csv",
             {
@@ -20,7 +21,7 @@ const useLab = (curr) => {
 
                     setAnswer(res.data[8+curr][1]);
                     initializeLab();
-                    
+                    setInitialized(true);
                 }   
             });
     })
@@ -37,7 +38,7 @@ const useLab = (curr) => {
                 router.push('lab2');
                 break
             case 3:
-                router.push('lab2');
+                router.push('lab3');
                 break
             case 4:
                 router.push('lab2');
@@ -64,7 +65,7 @@ const useLab = (curr) => {
             initializeLab();
         }
     }
-    return [answer, nextLevel];
+    return [answer, nextLevel, initialized];
 }
 
 export default useLab;

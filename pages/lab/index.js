@@ -1,11 +1,10 @@
-import React, { useRef, useEffect, use } from 'react';
+import React, { useRef, useEffect, use, useState } from 'react';
 import { useRouter } from 'next/router'
 import CryptoJS from 'crypto-js';
-import Papa from 'papaparse'
-import useLab from './useLab';
+import useLab from '../../hooks/useLab';
 const Index = () => {
     const passwordRef = useRef();
-    const [reqPassword, nextLevel] = useLab(1);
+    const [reqPassword, nextLevel, initialized] = useLab(1);
     const submit =()=>{
         if (passwordRef.current.value==reqPassword){
             nextLevel();
@@ -15,20 +14,23 @@ const Index = () => {
         }
     }
     return (
-    <div>
+    <div className='bg'>
         <div id="container">
             <div className="steam" id="steam1"> </div>
             <div className="steam" id="steam2"> </div>
             <div className="steam" id="steam3"> </div>
             <div className="steam" id="steam4"> </div>
         </div>
-        <div className='main-lab'>
+        {initialized?<div className='main-lab'>
             <h1 className='lab-label'>
-                Enter code for lab destruction
+                 Enter code for lab destruction
             </h1>
             <input className='lab password' type="password" placeholder='Password' ref={passwordRef}/>
-            <button className='submit lab' onClick={submit}>Advance</button>
-        </div>
+            <button className='submit lab' onClick={submit}>TERMINATE</button>
+        </div>:
+        <><h1 className='lab-label'>
+        Loading Lab settings and directory
+   </h1></>}
     </div>
     );
 }

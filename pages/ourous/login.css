@@ -31,9 +31,6 @@
     border-radius: 20px;
     box-shadow: 0px 0px 90px rgb(0,0,250);
 }
-.center-borous{
-
-}
 .label{
     text-align: center;
     padding-top: 20px;
@@ -43,6 +40,7 @@
     font-family: 'DO Futuristic', sans-serif;
 }
 .level{
+    text-align: center;
     color: rgba(265, 265, 265, 0.5);
     padding: 20px;
 }

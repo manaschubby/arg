@@ -51,6 +51,10 @@ const useLab = (curr) => {
     }
     const getLevel = () =>{
         const encryptedLevel = localStorage.getItem("level")
+        if(encryptedLevel==null){
+            localStorage.setItem("level",keys[1]);
+            return 1;
+        }
         var level = CryptoJS.AES.decrypt(encryptedLevel,secretPassKey).toString()
         level = Number.parseInt(level)
         level = level - 30;

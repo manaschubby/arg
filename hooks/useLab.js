@@ -4,7 +4,7 @@ import Papa from 'papaparse'
 import {useRouter} from 'next/router';
 const useLab = (curr) => {
     const router = useRouter()
-    let secretPassKey;
+    const [secretPassKey,setSecretPassKey] = useState();
     let keys = ["Why do you want to acces this you son of a bitch. Play the fucking game"];
     const [answer, setAnswer] = useState();
     const [initialized, setInitialized] = useState(false);
@@ -16,7 +16,8 @@ const useLab = (curr) => {
                 download: true,
                 hearder:true,
                 complete: (res) => {
-                    secretPassKey = res.data[7][1]
+                    setSecretPassKey( res.data[7][1]);
+                    console.log(secretPassKey)
                     for (let index = 1; index <= 4; index++) {
                         keys[index] = res.data[index][1]
                     }

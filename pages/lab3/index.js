@@ -6,18 +6,21 @@ const Index = () => {
     const passwordRef = useRef();
     const submit = ()=>{
         const enteredPasskey = Number.parseInt(passwordRef.current.value);
-        if (enteredPasskey%10000000!=0){
+        const numberOfDigits = Math.log10(enteredPasskey)+1;
+        const digit6answer = (correctAnswer/100)-((correctAnswer%100)*0.01)
+        if (numberOfDigits==8){
             if(enteredPasskey==correctAnswer){
                 nextLevel("8");
                 return;
             }
             else{
                 alert("Please try again or reduce no. of digits");
+                console.log("me")
                 return;
             }
         }
         else{
-            if(enteredPasskey==Number(correctAnswer/100)){
+            if(enteredPasskey==digit6answer){
                 nextLevel("6");
                 return;
             }

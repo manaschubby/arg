@@ -31,12 +31,12 @@ const Index = () => {
             .then((response)=>{
                 setIsLoading(false)
                 localStorage.setItem("Submitted", "yes")
-                alert("Thank You for playing the game. Your responses have been saved. Results will be out soon");
+                alert(thankyouText);
                 initializeSuccess();
             })
         }
     }
-    const [successKey, initializeSuccess] = useSuccess();
+    const [successKey, initializeSuccess, paragraph, thankyouText] = useSuccess();
     return (
         <div>
             <div className='background'>
@@ -44,6 +44,7 @@ const Index = () => {
                 <div className='center-main'>
                     {!isLoading &&<>
                     <h1 className='level'>Successful Completion. Enter Team Details</h1>
+                    <div className='label'>{paragraph}</div>
                     <input 
                         className='password' 
                         placeholder='Team Name' 

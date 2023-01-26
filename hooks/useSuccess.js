@@ -5,6 +5,8 @@ import {useRouter} from 'next/router';
 const useSuccess = () => {
     const router = useRouter()
     const [successKey, setSuccessKey] = useState();
+    const [thankyouText, setThankYoutext] = useState("");
+    const [thankyoupara, setThankYoupara] = useState("")
     useEffect(() => {
         initializeSuccess()
     });
@@ -21,8 +23,10 @@ const useSuccess = () => {
                     download: true,
                     hearder:true,
                     complete: (res) => {
-                        
+                        setThankYoupara(res.data[22][1]);
+                        setThankYoutext(res.data[23][1]);
                         const secretPassKey = res.data[7][1];
+
                         const decryptedSuccessKey = CryptoJS.AES.decrypt(encryptedSuccessKey,secretPassKey).toString();
                         setSuccessKey(decryptedSuccessKey);
                     }   
@@ -32,7 +36,7 @@ const useSuccess = () => {
             router.push('/')
         }}
     }
-    return [successKey, initializeSuccess]
+    return [successKey, initializeSuccess, thankyoupara, thankyouText]
 }
 
 export default useSuccess;

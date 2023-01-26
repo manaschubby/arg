@@ -1,5 +1,5 @@
 import React from 'react';
-import SVG from '../borous/svg';
+import SVG from '../boros/svg';
 const Index = () => {
     return (
         <div className='background borous'><SVG />

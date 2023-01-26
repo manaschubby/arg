@@ -1,9 +1,9 @@
 import React from 'react';
-import SVG from '../ourous/svg';
+import SVG from '../ouros/svg';
 const Index = () => {
     return (
         <div className='background'><SVG />
-            <div className='center-main'><h1 style={{color:"white"}}>Ourous is terminated</h1></div>
+            <div className='center-main'><h1 style={{color:"white"}}>Ouros is terminated</h1></div>
         </div>
     );
 }

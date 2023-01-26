@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import useSuccess from '../../hooks/useSuccess';
-import SVG from '../ourous/svg';
+import SVG from '../ouros/svg';
 import axios from 'axios';
 const Index = () => {
     const teamRef = useRef();

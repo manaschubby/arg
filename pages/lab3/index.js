@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import useLab from '../../hooks/useLab';
-import SVG from '../ourous/svg';
+import SVG from '../ouros/svg';
 const Index = () => {
     const [correctAnswer, nextLevel, initialized, prompt] = useLab(3);
     const passwordRef = useRef();

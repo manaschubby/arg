@@ -4,7 +4,7 @@ import CryptoJS from 'crypto-js';
 import useLab from '../../hooks/useLab';
 const Index = () => {
     const passwordRef = useRef();
-    const [reqPassword, nextLevel, initialized] = useLab(1);
+    const [reqPassword, nextLevel, initialized, prompt] = useLab(1);
     const submit =()=>{
         if (passwordRef.current.value==reqPassword){
             nextLevel();
@@ -21,9 +21,9 @@ const Index = () => {
             <div className="steam" id="steam3"> </div>
             <div className="steam" id="steam4"> </div>
         </div>
-        {initialized?<div className='main-lab'>
+        {initialized?<div className='center-main main-lab'>
             <h1 className='lab-label'>
-                 Enter code for lab destruction
+                 {prompt}
             </h1>
             <input className='lab password' type="password" placeholder='Password' ref={passwordRef}/>
             <button className='submit lab' onClick={submit}>TERMINATE</button>

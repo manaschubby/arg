@@ -4,10 +4,11 @@ import Papa from 'papaparse'
 import {useRouter} from 'next/router';
 const useLab = (curr) => {
     const router = useRouter()
-    var secretPassKey;
-    var keys = ["Why do you want to acces this you son of a bitch. Play the fucking game"];
+    let secretPassKey;
+    let keys = ["Why do you want to acces this you son of a bitch. Play the fucking game"];
     const [answer, setAnswer] = useState();
     const [initialized, setInitialized] = useState(false);
+    const [prompt, setPrompt] = useState()
     useEffect(()=>{
         Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTsUfoS6dO39KVqXEa-VONFd8YeMlUnWjo5e3F9GoBhG_F8_ClhecMjF1rD2_tukJ61DRd5wjCENMfY/pub?gid=0&single=true&output=csv",
             {
@@ -21,7 +22,9 @@ const useLab = (curr) => {
 
                     setAnswer(res.data[8+curr][1]);
                     initializeLab();
+                    setPrompt(res.data[8+curr][3])
                     setInitialized(true);
+
                 }   
             });
     })
@@ -55,7 +58,7 @@ const useLab = (curr) => {
             localStorage.setItem("level",keys[1]);
             return 1;
         }
-        var level = CryptoJS.AES.decrypt(encryptedLevel,secretPassKey).toString()
+        let level = CryptoJS.AES.decrypt(encryptedLevel,secretPassKey).toString()
         level = Number.parseInt(level)
         level = level - 30;
         return level
@@ -69,7 +72,7 @@ const useLab = (curr) => {
             initializeLab();
         }
     }
-    return [answer, nextLevel, initialized];
+    return [answer, nextLevel, initialized, prompt];
 }
 
 export default useLab;

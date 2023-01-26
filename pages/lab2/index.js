@@ -1,7 +1,7 @@
 import React from 'react';
 import useLab from '../../hooks/useLab';
 const Index = () => {
-    const [correctAnswer, nextLevel, initialized] = useLab(2);
+    const [correctAnswer, nextLevel, initialized, prompt] = useLab(2);
 
     const submit = (sci) => {
         if (sci==correctAnswer){
@@ -22,7 +22,7 @@ const Index = () => {
         </div>
         {initialized?<>
         <div className='lab2-label'>
-        Terminate the leader
+        {prompt}
    </div>
    <div className='main-lab2'>
             <div className='person'>

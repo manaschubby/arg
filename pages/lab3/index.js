@@ -2,17 +2,17 @@ import React, { useRef } from 'react';
 import useLab from '../../hooks/useLab';
 import SVG from '../ourous/svg';
 const Index = () => {
-    const [correctAnswer, nextLevel, initialized] = useLab(3);
+    const [correctAnswer, nextLevel, initialized, prompt] = useLab(3);
     const passwordRef = useRef();
     const submit = ()=>{
-        
+
     }
     return (
             <div className='background-lab'>
                 {initialized ? 
                 <div className='center-main'>
                     <h1 className='level'>
-                        Enter the final destruction code
+                        {prompt}
                     </h1>
                     <div className='label'>
                         

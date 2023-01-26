@@ -1,7 +1,7 @@
 import React from 'react';
 import useLab from '../../hooks/useLab';
 const Index = () => {
-    const [correctAnswer, nextLevel, initialized, prompt] = useLab(2);
+    const [correctAnswer, nextLevel, initialized, prompt, writeups] = useLab(2);
 
     const submit = (sci) => {
         if (sci==correctAnswer){
@@ -25,29 +25,41 @@ const Index = () => {
         {prompt}
    </div>
    <div className='main-lab2'>
-            <div className='person'>
+            <div className='person 1'>
                 <div className='person-image' />
+                <div className='person-writeup'>
+                    {writeups[0]}
+                </div>
                 <button className='submit lab lab2' onClick={(e)=>{
                     e.preventDefault();
                     submit(1)
                 }}>TERMINATE</button>
             </div>
-            <div className='person'>
+            <div className='person 2'>
                 <div className='person-image' />
+                <div className='person-writeup'>
+                    {writeups[1]}
+                </div>
                 <button className='submit lab lab2' onClick={(e)=>{
                     e.preventDefault();
                     submit(2)
                 }}>TERMINATE</button>
             </div>
-            <div className='person'>
+            <div className='person 3'>
                 <div className='person-image' />
+                <div className='person-writeup'>
+                    {writeups[2]}
+                </div>
                 <button className='submit lab lab2' onClick={(e)=>{
                     e.preventDefault();
                     submit(3)
                 }}>TERMINATE</button>
             </div>
-            <div className='person'>
+            <div className='person 4'>
                 <div className='person-image' />
+                <div className='person-writeup'>
+                    {writeups[3]}
+                </div>
                 <button className='submit lab lab2' onClick={(e)=>{
                     e.preventDefault();
                     submit(4)

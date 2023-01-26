@@ -35,7 +35,7 @@ const useLab = (curr) => {
                 }   
             });
     })
-    const initializeLab = () => {
+    const initializeLab = (e) => {
         if (secretPassKey!=null){
         const level = getLevel()
         switch (level){
@@ -51,7 +51,9 @@ const useLab = (curr) => {
                 router.push('lab3');
                 break
             case 4:
-                router.push('lab2');
+                const encryptedSuccess = CryptoJS.AES.encrypt(e, secretPassKey).toString()
+                localStorage.setItem("successfull", encryptedSuccess);
+                router.push('success');
                 break;
             default:
                 localStorage.setItem("level", keys[1]);
@@ -70,13 +72,13 @@ const useLab = (curr) => {
         level = level - 30;
         return level
     }
-    const nextLevel = () => {
+    const nextLevel = (e) => {
         const currLevel = getLevel();
         if (currLevel==curr){
             const newLevel = curr+1;
             const newEncryptedLevel = CryptoJS.AES.encrypt(newLevel.toString(), secretPassKey);
             localStorage.setItem("level", newEncryptedLevel);
-            initializeLab();
+            initializeLab(e);
         }
     }
     return [answer, nextLevel, initialized, prompt, writeups];

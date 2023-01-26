@@ -4,7 +4,7 @@ const Index = () => {
     const [correctAnswer, nextLevel, initialized, prompt, writeups] = useLab(2);
     const submit = (sci) => {
         if (sci==correctAnswer){
-            nextLevel();
+            nextLevel("");
             return;
         }else{
             alert("No Babe wrong person entered. Try again love");

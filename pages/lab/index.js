@@ -7,7 +7,7 @@ const Index = () => {
     const [reqPassword, nextLevel, initialized, prompt] = useLab(1);
     const submit =()=>{
         if (passwordRef.current.value==reqPassword){
-            nextLevel();
+            nextLevel("");
             return;
         }else{
             alert("No Babe wrong code entered. Try again love");

@@ -5,7 +5,27 @@ const Index = () => {
     const [correctAnswer, nextLevel, initialized, prompt] = useLab(3);
     const passwordRef = useRef();
     const submit = ()=>{
-
+        const enteredPasskey = Number.parseInt(passwordRef.current.value);
+        if (enteredPasskey%10000000!=0){
+            if(enteredPasskey==correctAnswer){
+                nextLevel("8");
+                return;
+            }
+            else{
+                alert("Please try again or reduce no. of digits");
+                return;
+            }
+        }
+        else{
+            if(enteredPasskey==Number(correctAnswer/100)){
+                nextLevel("6");
+                return;
+            }
+            else{
+                alert("Please try again or reduce no. of digits");
+                return;
+            }
+        }
     }
     return (
             <div className='background-lab'>

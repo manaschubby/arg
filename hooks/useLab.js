@@ -27,8 +27,9 @@ const useLab = (curr) => {
                     if(curr==2){
                         let newWriteups = [];
                         for (let index = 0; index < 4; index++) {
-                            newWriteups[index] = res.data[16][1]
+                            newWriteups[index] = res.data[16+index][1]
                         }
+                        console.log(newWriteups)
                         setWriteups(newWriteups);
                     }
                 }   

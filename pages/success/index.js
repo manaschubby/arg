@@ -44,7 +44,7 @@ const Index = () => {
                 <div className='center-main'>
                     {!isLoading &&<>
                     <h1 className='level'>Successful Completion. Enter Team Details</h1>
-                    <div className='label'>{paragraph}</div>
+                    <div className='label success'>{paragraph}</div>
                     <input 
                         className='password' 
                         placeholder='Team Name' 

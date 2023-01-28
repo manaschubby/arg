@@ -148,10 +148,21 @@
     bottom: 20px;
     left: 20px;
 }
+.i1{
+    background-image: url(./scientists/2.jpeg);
+}
+.i2{
+    background-image: url(./scientists/4.jpeg);
+}
+.i3{
+    background-image: url(./scientists/3.jpeg);
+}
+.i4{
+    background-image: url(./scientists/1.jpeg);
+}
 .person-image{
     width: 30%;
     height: 200px;
-    background-image: url(../lab2/scientist.jpg);
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -170,4 +181,16 @@
     width: 100vw;
     height: 100vh;
     background-position: fixed;
+}
+.success{
+    font-size: small;
+}
+
+@media (max-height: 700px) {
+    .person{
+        height: 250px;
+    }
+    .lab2{
+        margin-top: -10px;
+    }
 }

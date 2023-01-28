@@ -17,7 +17,6 @@ const useLab = (curr) => {
                 hearder:true,
                 complete: (res) => {
                     setSecretPassKey( res.data[7][1]);
-                    console.log(secretPassKey)
                     for (let index = 1; index <= 4; index++) {
                         keys[index] = res.data[index][1]
                     }

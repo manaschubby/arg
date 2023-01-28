@@ -1,5 +1,9 @@
 import React from 'react';
 import useLab from '../../hooks/useLab';
+import pi1 from '../lab/scientists/1.jpeg'
+import pi2 from '../lab/scientists/2.jpeg'
+import pi3 from '../lab/scientists/2.jpeg'
+import pi4 from '../lab/scientists/3.jpeg';
 const Index = () => {
     const [correctAnswer, nextLevel, initialized, prompt, writeups] = useLab(2);
     const submit = (sci) => {
@@ -26,7 +30,7 @@ const Index = () => {
    <div className='main-lab2'>
             <div className='person p1'>
                 <div className='person-header'>
-                    <div className='person-image' />
+                    <div className='person-image i2' />
                     <div className='person-writeup'>
                 
                     {writeups[0]}
@@ -38,7 +42,7 @@ const Index = () => {
             </div>
             <div className='person p2'>
                 <div className='person-header'>
-                    <div className='person-image' />
+                    <div className='person-image i1' />
                     <div className='person-writeup'>
                 
                     {writeups[1]}
@@ -50,7 +54,7 @@ const Index = () => {
             </div>
             <div className='person p3'>
                 <div className='person-header'>
-                    <div className='person-image' />
+                    <div className='person-image i3' />
                     <div className='person-writeup'>
                 
                     {writeups[2]}
@@ -62,7 +66,7 @@ const Index = () => {
             </div>
             <div className='person p4'>
                 <div className='person-header'>
-                    <div className='person-image' />
+                    <div className='person-image i4' />
                     <div className='person-writeup'>
                 
                     {writeups[3]}

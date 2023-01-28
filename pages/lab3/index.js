@@ -6,8 +6,10 @@ const Index = () => {
     const passwordRef = useRef();
     const submit = ()=>{
         const enteredPasskey = Number.parseInt(passwordRef.current.value);
-        const numberOfDigits = Math.log10(enteredPasskey)+1;
+        let numberOfDigits = Math.log10(enteredPasskey)+1;
+        numberOfDigits = numberOfDigits-(numberOfDigits%1);
         const digit6answer = (correctAnswer/100)-((correctAnswer%100)*0.01)
+        console.log(numberOfDigits)
         if (numberOfDigits==8){
             if(enteredPasskey==correctAnswer){
                 nextLevel("8");

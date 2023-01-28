@@ -5,7 +5,20 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+.love{
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  color: white;
+  font-size: small;
+  transform: translate(-50%,-50%);
+  backdrop-filter: blur(10px);
+  padding: 3px;
+  border-radius: 3px;
+}
+.love a{
+  color: brown;
+}
 a {
   color: inherit;
   text-decoration: none;

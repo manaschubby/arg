@@ -18,7 +18,7 @@ const Index = () => {
             router.push('/borosterm');setLevel(1);return;
         }
             setIsLoading(true);timeout=setTimeout(()=>{setIsLoading(false);},2000);passwordRef.current.value="";}
-        else{alert(data[level][4]);}};return (<div className='background borous'><SVG />{!isLoading ? <div className='center-main'><h1 className='level'>Code {level} for termination of BOROS</h1><div className='label'>{data[level][3]}</div><input className='password' type="password" placeholder='Password' ref={passwordRef}></input><button className='submit' onClick={submit}>Advance</button> </div>
+        else{alert(data[level][4]);}};return (<div className='background borous'><div className='love'>Designed with love: <a href='https://www.linkedin.com/in/manas-ashwin-053755224/'>Manas Ashwin</a></div><SVG />{!isLoading ? <div className='center-main'><h1 className='level'>Code {level} for termination of BOROS</h1><div className='label'>{data[level][3]}</div><input className='password' type="password" placeholder='Password' ref={passwordRef}></input><button className='submit' onClick={submit}>Advance</button> </div>
             : <div className='center-main'><h1 style={{color:"white"}}>Checking Database for answers</h1></div>}
         </div>
     );

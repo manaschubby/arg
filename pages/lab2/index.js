@@ -17,6 +17,7 @@ const Index = () => {
     return (
         <div>
             <div className='bg'></div>
+            <div className='love'>Designed with love: <a href='https://www.linkedin.com/in/manas-ashwin-053755224/'>Manas Ashwin</a></div>
         <div id="container">
             <div className="steam" id="steam1"> </div>
             <div className="steam" id="steam2"> </div>

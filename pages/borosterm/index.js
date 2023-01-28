@@ -17,7 +17,7 @@ const Index = () => {
             })
     }, []);
     return (
-        <div className='background borous'><SVG />
+        <div className='background borous'><SVG /><div className='love'>Designed with love: <a href='https://www.linkedin.com/in/manas-ashwin-053755224/'>Manas Ashwin</a></div>
             <div className='center-main borous-term'><h1 style={{color:"white"}}>Boros is terminated</h1><div className='label'><a href={link}>{link}</a></div></div>
         </div>
     );

@@ -34,6 +34,7 @@ const Index = () => {
     }
     return (
             <div className='background-lab'>
+                <div className='love'>Designed with love: <a href='https://www.linkedin.com/in/manas-ashwin-053755224/'>Manas Ashwin</a></div>
                 {initialized ? 
                 <div className='center-main'>
                     <h1 className='level'>

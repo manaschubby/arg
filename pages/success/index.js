@@ -40,6 +40,7 @@ const Index = () => {
     return (
         <div>
             <div className='background'>
+            <div className='love'>Designed with love: <a href='https://www.linkedin.com/in/manas-ashwin-053755224/'>Manas Ashwin</a></div>
                 <SVG />
                 <div className='center-main'>
                     {!isLoading &&<>

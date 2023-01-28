@@ -31,12 +31,12 @@ const Index = () => {
             .then((response)=>{
                 setIsLoading(false)
                 localStorage.setItem("Submitted", "yes")
-                alert(thankyouText);
+                alert("Your responses have been sent to us. Thank you - Team ARG");
                 initializeSuccess();
             })
         }
     }
-    const [successKey, initializeSuccess, paragraph, thankyouText] = useSuccess();
+    const [successKey, initializeSuccess, paragraph] = useSuccess();
     return (
         <div>
             <div className='background'>

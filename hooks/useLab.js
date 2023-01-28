@@ -11,7 +11,8 @@ const useLab = (curr) => {
     const [prompt, setPrompt] = useState()
     const [writeups, setWriteups] = useState([])
     useEffect(()=>{
-        Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTsUfoS6dO39KVqXEa-VONFd8YeMlUnWjo5e3F9GoBhG_F8_ClhecMjF1rD2_tukJ61DRd5wjCENMfY/pub?gid=0&single=true&output=csv",
+        const buffer = Buffer.from("aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvZS8yUEFDWC0xdlRzVWZvUzZkTzM5S1ZxWEVhLVZPTkZkOFllTWxVbldqbzVlM0Y5R29CaEdfRjhfQ2xoZWNNakYxckQyX3R1a0o2MURSZDV3akNFTk1mWS9wdWI/Z2lkPTAmc2luZ2xlPXRydWUmb3V0cHV0PWNzdg==", 'base64');const b = buffer.toString();
+        Papa.parse(b,
             {
                 download: true,
                 hearder:true,

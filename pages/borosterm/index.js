@@ -18,7 +18,7 @@ const Index = () => {
     }, []);
     return (
         <div className='background borous'><SVG />
-            <div className='center-main'><h1 style={{color:"white"}}>Boros is terminated</h1><div className='label'><a href={link}>{link}</a></div></div>
+            <div className='center-main borous-term'><h1 style={{color:"white"}}>Boros is terminated</h1><div className='label'><a href={link}>{link}</a></div></div>
         </div>
     );
 }

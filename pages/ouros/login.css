@@ -68,6 +68,9 @@
     font-size:large;
     font-family: 'DO Futuristic', sans-serif;
 }
+.borous-term{
+    width: max-content;
+}
 @media (max-width: 700px) {
     .center-main{
         width: 350px;
